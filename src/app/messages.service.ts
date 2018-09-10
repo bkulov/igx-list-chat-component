@@ -69,4 +69,10 @@ export class MessagesService {
     public getMessages() : IMessage[] {
         return this._mockMessages;
     }
+
+    public addMessage(message : IMessage) {
+        if (message) {
+            this._mockMessages.push(message);
+        }
+    }
 }

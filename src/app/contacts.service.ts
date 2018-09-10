@@ -51,4 +51,8 @@ export class ContactsService {
     public getMockContacts(): IContact[] {
         return this._contacts;
     }
+
+    public getContact(id: number) : IContact {
+        return this.getMockContacts().find(c => c.id === id);
+    }
 }

@@ -15,7 +15,7 @@ export class ChatComponentComponent {
 
     private _myId : number = 4;
 
-    constructor(public messagesService: MessagesService, private _contactsService: ContactsService) { }
+    constructor(public messagesService: MessagesService, public contactsService: ContactsService) { }
 
     getMessageTemplate(message : IMessage) : TemplateRef<any> {
         if (message.authorId === this._myId) {
@@ -39,9 +39,5 @@ export class ChatComponentComponent {
         const previousMessage = messages[messageIndex-1];
 
         return currentMessage.authorId !== previousMessage.authorId;
-    }
-
-    getContact(id : number) : IContact {
-        return this._contactsService.getMockContacts().find(c => c.id === id);
     }
 }

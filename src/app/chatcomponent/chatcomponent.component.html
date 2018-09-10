@@ -30,7 +30,8 @@
     </ng-template>
 
     <ng-container *ngFor="let message of messagesService.getMessages(); index as i">
-        <ng-container *ngTemplateOutlet="getMessageTemplate(message); context: {message: message, contact: getContact(message.authorId), index: i}"></ng-container>
+        <ng-container *ngTemplateOutlet="getMessageTemplate(message); context: {message: message, contact: contactsService.getContact(message.authorId), index: i}">
+        </ng-container>
     </ng-container>
 
 </igx-list>
